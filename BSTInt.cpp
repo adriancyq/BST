@@ -22,21 +22,31 @@ BSTInt::~BSTInt() {
 
 bool BSTInt::insert(int item)
 {
+
+  // First element to insert
   if (!root) {
     root = new BSTNodeInt(item);
     ++isize;
     return true;
   }
 
+  // Start at root to find where to insert new node
   BSTNodeInt* curr = root;
-  
+
+  // Find the first appropriate null position
   while (curr->left && curr->right) {
+
+    // Go left if current node is greater than element to insert
     if (item < curr->data) {
       curr = curr->left;
     }
+
+    // Go right if current node is less than element to insert 
     else if (curr->data < item) {
       curr = curr->right;
     }
+
+    // Found an element with same value, do not insert
     else {
       return false;
     }
@@ -67,14 +77,23 @@ bool BSTInt::insert(int item)
  */
 bool BSTInt::find(int item) const
 {
+  // Start looking at root node
   BSTNodeInt* curr = root;
+
+  // Go until we go past a leaf node
   while (curr) {
+
+    // Go right if node is less than desired
     if (curr->data < item) {
       curr = curr->right;
     }
+
+    // Go left if node is greater than desired
     else if (item < curr->data) {
       curr = curr->left;
     }
+
+    // Found desired node
     else {
       return true;
     }
@@ -82,15 +101,15 @@ bool BSTInt::find(int item) const
   return false;
 }
 
-  
+
 /** Return the number of items currently in the BST.
  */
-unsigned int BSTInt::size() const 
+unsigned int BSTInt::size() const
 {
   return isize;
 }
 
-  
+
 /** Return the height of the BST.
     Height of tree with just root node is 0
  */
@@ -101,9 +120,9 @@ int BSTInt::height() const
 }
 
 
-/** Return true if the BST is empty, else false. 
+/** Return true if the BST is empty, else false.
  */
-bool BSTInt::empty() const 
+bool BSTInt::empty() const
 {
   // TODO
   return false;

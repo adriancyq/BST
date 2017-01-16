@@ -5,8 +5,8 @@
 #include <iostream>
 
 /* Header file for a BST class that holds ints.  You are welcome to add methods and variables */
-/* Author: Christine Alvarado 
- * Author: YOUR NAME HERE
+/* Author: Christine Alvarado
+ * Author: Jonathan Chiu
  */
 
 class BSTInt {
@@ -47,19 +47,19 @@ public:
    */
   bool find(int item) const ;
 
-  
+
   /** Return the number of items currently in the BST.
    */
   unsigned int size() const;
 
-  
+
   /** Return the height of the BST.
       Height of tree with just root node is 0
    */
   int height() const;
 
 
-  /** Return true if the BST is empty, else false. 
+  /** Return true if the BST is empty, else false.
    */
   bool empty() const;
 
@@ -70,7 +70,7 @@ private:
   /** Pointer to the root of this BST, or 0 if the BST is empty */
   BSTNodeInt* root;
 
-  /** Number of Data items stored in this BST. 
+  /** Number of Data items stored in this BST.
    *  Cache this number for efficiency. */
   unsigned int isize;
 

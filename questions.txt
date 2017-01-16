@@ -1,0 +1,19 @@
+1. testBST.o BSTInt.o BSTNodeInt.o
+2. We get the following error:
+
+BSTInt.cpp: In function ‘bool insert(int)’:
+BSTInt.cpp:25:8: error: ‘root’ was not declared in this scope
+   if (!root) {
+        ^
+BSTInt.cpp:27:7: error: ‘isize’ was not declared in this scope
+     ++isize;
+       ^
+BSTInt.cpp:31:22: error: ‘root’ was not declared in this scope
+   BSTNodeInt* curr = root;
+                      ^
+BSTInt.cpp:56:5: error: ‘isize’ was not declared in this scope
+   ++isize;
+     ^
+The 'root' and 'isize' member variables were originally defined along with the
+BSTInt class. Without a namescope for the insert function, it is now global, but
+the function definition still depends on member variables in the BSTInt class.
