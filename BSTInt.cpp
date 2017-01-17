@@ -132,7 +132,11 @@ int BSTInt::height() const
  */
 bool BSTInt::empty() const
 {
-  // TODO
+
+  // If the BST has at least one element, the root cannot be null
+  if (root) {
+    return true;
+  }
   return false;
 }
 
@@ -146,5 +150,16 @@ bool BSTInt::empty() const
  */
 void BSTInt::deleteAll(BSTNodeInt* n)
 {
-  // TODO
+  if (!n) {
+    return;
+  }
+
+  // Go left
+  deleteAll(n->left);
+
+  // Then go right
+  deleteAll(n->right);
+
+  // Then delete current node
+  delete n;
 }

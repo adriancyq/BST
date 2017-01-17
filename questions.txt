@@ -17,3 +17,17 @@ BSTInt.cpp:56:5: error: ‘isize’ was not declared in this scope
 The 'root' and 'isize' member variables were originally defined along with the
 BSTInt class. Without a namescope for the insert function, it is now global, but
 the function definition still depends on member variables in the BSTInt class.
+
+3. The bug was in the while loop condition of the insert function. The while
+loop iterates if and only if the current node has two child nodes.
+
+4. The first step in my debugging process is to understand why the BST passed
+the original test. We realized that the order in which the ints were inserted
+made it a balanced BST. Thus, I wrote another test, inserting elements 1, 2, 3
+that would create a tree that is not balanced. After running the second test,
+it outputted that the element '2' was not in the tree, so I knew there must be
+an error in how the BST finds where to insert the node. The while loop
+condition stood out the most because we do not require the current node to have
+two child nodes before excluding it as a location in the tree to insert. After
+changing the condition to check 'curr != null', and introducing a parent node
+pointer, the BST passed all tests!
