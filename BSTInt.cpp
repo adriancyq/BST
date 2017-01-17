@@ -32,17 +32,20 @@ bool BSTInt::insert(int item)
 
   // Start at root to find where to insert new node
   BSTNodeInt* curr = root;
+  BSTNodeInt* parent = NULL;      // Keep track of current node's parent
 
   // Find the first appropriate null position
-  while (curr->left && curr->right) {
+  while (curr != NULL) {
 
     // Go left if current node is greater than element to insert
     if (item < curr->data) {
+      parent = curr;
       curr = curr->left;
     }
 
-    // Go right if current node is less than element to insert 
+    // Go right if current node is less than element to insert
     else if (curr->data < item) {
+      parent = curr;
       curr = curr->right;
     }
 
@@ -52,17 +55,22 @@ bool BSTInt::insert(int item)
     }
   }
 
-  // Ready to insert
+  // Create node to insert
   BSTNodeInt* newNode = new BSTNodeInt(item);
-  if (item < curr->data) {
-    curr->left = newNode;
-    newNode->parent = curr;
-  }
-  else {
-    curr->right = newNode;
-    newNode->parent = curr;
+
+  // Insert left
+  if (item < parent->data) {
+    parent->left = newNode;
+    newNode->parent = parent;
   }
 
+  // Insert right
+  else {
+    parent->right = newNode;
+    newNode->parent = parent;
+  }
+
+  // Update size and return true on successful insertion
   ++isize;
   return true;
 
