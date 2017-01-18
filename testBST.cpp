@@ -195,9 +195,9 @@ int main() {
 
     // Add each item in vector into BST
     for (int item: v4) {
-      bool result = b4.height();
+      bool result1 = b4.height();
 
-      if(! result ) {
+      if(! result1 ) {
           cout << "Incorrect height when checks height of BST " << item
                << endl;
           return -1;
