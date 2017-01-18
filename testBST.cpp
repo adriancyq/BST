@@ -173,6 +173,8 @@ int main() {
     // Create a BST holding int
     BSTInt b3;
 
+    //add stuff into BST
+
     // Add each item in vector into BST
     for (int item: v3) {
       bool result = b3.height();
