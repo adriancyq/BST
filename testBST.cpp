@@ -185,6 +185,15 @@ int main() {
     }
 
     //test for empty
+    for (int item: v3){
+        bool listempty = b3.empty();
+
+        if(! listempty){
+            cout << "List is not empty " << item
+               << endl;
+            return -1;
+        }
+    }
   
     //test for deleteAll
     
