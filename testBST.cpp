@@ -196,7 +196,15 @@ int main() {
     }
   
     //test for deleteAll
-    
+    for (int item: v3){
+        bool deleteList = b3.deleteAll();
+
+        if(! deleteList){
+            cout << "List is not deleted " << item
+               << endl;
+            return -1;
+        }
+    }
 
 
     cout << "All tests passed!" << endl;
