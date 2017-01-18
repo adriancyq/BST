@@ -163,7 +163,7 @@ int main() {
     // ADD MORE TESTS HERE.  You might also want to change what is input
     // into the vector v.
 
-       /* testing height
+       /* testing height*/
     // Create a vector with increasing ints
     vector<int> v3;
     v2.push_back(1);
@@ -175,14 +175,14 @@ int main() {
 
     // Add each item in vector into BST
     for (int item: v3) {
-      bool result = b3.height(item);
+      bool result = b3.height();
 
       if(! result ) {
           cout << "Incorrect height when checking height of BST " << item
                << endl;
           return -1;
       }
-    }*/
+    }
 
     //test for empty
   
