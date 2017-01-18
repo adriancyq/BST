@@ -6,7 +6,7 @@
 
 /* Header file for a BST class that holds ints.  You are welcome to add methods and variables */
 /* Author: Christine Alvarado
- * Author: Jonathan Chiu
+ * Author: Jonathan Chiu & Adrian Cordova y Quiroz
  */
 
 class BSTInt {
@@ -82,7 +82,7 @@ private:
    */
   static void deleteAll(BSTNodeInt* n);
 
-
+  static int heightFinder(BSTNodeInt* n);
 
 };
 

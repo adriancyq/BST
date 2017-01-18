@@ -124,10 +124,29 @@ unsigned int BSTInt::size() const
 int BSTInt::height() const
 {
   int treeheight = 0;
-  
-  return 0;
+  treeheight = heightFinder(root);
+  return treeheight;
 }
 
+//heightFinder will find the height and parse it into height
+int BSTInt::heightFinder(BSTNodeInt* n){
+
+  int rightNode = heightFinder(n->rightNode);
+  int leftNode = heightFinder(n->leftNode);
+
+  bool notN = !n;
+
+  if(notN) {
+    return -1;
+  }
+
+  if (leftNode > rightNode) {
+    return leftNode + 1;
+  }
+  else {
+    return rightNode + 1;
+  }
+}
 
 /** Return true if the BST is empty, else false.
  */
