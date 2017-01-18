@@ -90,7 +90,7 @@ int main() {
 
     /* UNCOMMENT THE LINES BELOW TO TEST THE TEMPLATE-BASED ITERATOR */
 
-    
+    /*    
     // Test the template version of the BST  with ints
     BST<int> btemp;
     for (int item : v) {
@@ -156,7 +156,7 @@ int main() {
         ++it;
     }
 
-    cout << "success!" << endl;
+    cout << "success!" << endl; */
 
     
 
