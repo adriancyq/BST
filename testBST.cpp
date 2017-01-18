@@ -163,7 +163,7 @@ int main() {
     // ADD MORE TESTS HERE.  You might also want to change what is input
     // into the vector v.
 
-       /* testing height */
+       /* testing height*/
 
     // Create a vector with increasing ints
     vector<int> v3;
@@ -185,44 +185,10 @@ int main() {
       }
     }
 
-
-     // Create a vector with increasing ints
-    vector<int> v4;
-    v2.push_back(1);
-    v2.push_back(2);
-    v2.push_back(3);
-
-    // Create a BST holding int
-    BSTInt b4;
     //test for empty
-     for (int item: v4) {
-      bool listoccupied = b4.empty(item);
-
-      if(! listoccupied ) {
-          cout << "BST list is empty" << item
-               << endl;
-          return -1;
-      }
-    }
-
-     // Create a vector with increasing ints
-    vector<int> v5;
-    v2.push_back(1);
-    v2.push_back(2);
-    v2.push_back(3);
-
-    // Create a BST holding int
-    BSTInt b5;
+  
     //test for deleteAll
-    for (int item: v5) {
-      bool listdeleted = b5.deleteAll(item);
-
-      if(! listoccupied ) {
-          cout << "BST list is deleted" << item
-               << endl;
-          return -1;
-      }
-    }
+    
 
 
     cout << "All tests passed!" << endl;
