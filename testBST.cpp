@@ -184,23 +184,32 @@ int main() {
       }
     }
 
+        // Create a vector with increasing ints
+    vector<int> v4;
+    v2.push_back(6);
+    v2.push_back(5);
+    v2.push_back(4);
+
+    // Create a BST holding int
+    BSTInt b4;
+
+    // Add each item in vector into BST
+    for (int item: v4) {
+      bool result = b4.height();
+
+      if(! result ) {
+          cout << "Incorrect height when checks height of BST " << item
+               << endl;
+          return -1;
+      }
+    }
+
     //test for empty
     for (int item: v3){
         bool listempty = b3.empty();
 
         if(! listempty){
             cout << "List is not empty " << item
-               << endl;
-            return -1;
-        }
-    }
-  
-    //test for deleteAll
-    for (int item: v3){
-        bool deleteList = b3.deleteAll(n);
-
-        if(! deleteList){
-            cout << "List is not deleted " << item
                << endl;
             return -1;
         }
