@@ -186,9 +186,9 @@ int main() {
 
         // Create a vector with increasing ints
     vector<int> v4;
-    v2.push_back(6);
-    v2.push_back(5);
-    v2.push_back(4);
+    v2.push_back(0);
+    v2.push_back(1);
+    v2.push_back(2);
 
     // Create a BST holding int
     BSTInt b4;
