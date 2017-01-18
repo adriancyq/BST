@@ -178,7 +178,7 @@ int main() {
       bool result = b3.height();
 
       if(! result ) {
-          cout << "Incorrect height when checking height of BST " << item
+          cout << "Incorrect height when checks height of BST " << item
                << endl;
           return -1;
       }
