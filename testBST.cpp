@@ -182,6 +182,11 @@ int main() {
                << endl;
           return -1;
       }
+      if(result){
+        cout << "BST height is " << item
+               << endl;
+        return 0;
+      }
     }
 
     //test for empty

@@ -123,7 +123,8 @@ unsigned int BSTInt::size() const
  */
 int BSTInt::height() const
 {
-  // TODO
+  int treeheight = 0;
+  
   return 0;
 }
 
@@ -139,9 +140,6 @@ bool BSTInt::empty() const
   }
   return false;
 }
-
-
-
 
 /** do a postorder traversal, deleting nodes
  * This is a helper for the destructor
