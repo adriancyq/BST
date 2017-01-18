@@ -131,8 +131,8 @@ int BSTInt::height() const
 //heightFinder will find the height and parse it into height
 int BSTInt::heightFinder(BSTNodeInt* n){
 
-  int rightNode = heightFinder(n->rightNode);
-  int leftNode = heightFinder(n->leftNode);
+  int right = heightFinder(n->right);
+  int left = heightFinder(n->left);
 
   bool notN = !n;
 
@@ -140,11 +140,11 @@ int BSTInt::heightFinder(BSTNodeInt* n){
     return -1;
   }
 
-  if (leftNode > rightNode) {
-    return leftNode + 1;
+  if (left > right) {
+    return left + 1;
   }
   else {
-    return rightNode + 1;
+    return right + 1;
   }
 }
 
