@@ -185,7 +185,7 @@ int main() {
     }
 
         // Create a vector with increasing ints
-    vector<int> v4;
+    /*vector<int> v4;
     v2.push_back(0);
     v2.push_back(1);
     v2.push_back(2);
@@ -202,7 +202,7 @@ int main() {
                << endl;
           return -1;
       }
-    }
+    }*/
 
     //test for empty
     for (int item: v3){
