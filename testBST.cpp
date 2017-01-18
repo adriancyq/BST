@@ -184,26 +184,6 @@ int main() {
       }
     }
 
-        // Create a vector with increasing ints
-    /*vector<int> v4;
-    v2.push_back(0);
-    v2.push_back(1);
-    v2.push_back(2);
-
-    // Create a BST holding int
-    BSTInt b4;
-
-    // Add each item in vector into BST
-    for (int item: v4) {
-      bool result1 = b4.height();
-
-      if(! result1 ) {
-          cout << "Incorrect height when checks height of BST " << item
-               << endl;
-          return -1;
-      }
-    }*/
-
     //test for empty
     for (int item: v3){
         bool listempty = b3.empty();
