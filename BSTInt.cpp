@@ -123,7 +123,8 @@ unsigned int BSTInt::size() const
  */
 int BSTInt::height() const
 {
-  int treeheight = 0;
+  int zero = 0;
+  int treeheight = zero;
   treeheight = heightFinder(root);
   return treeheight;
 }
@@ -133,18 +134,20 @@ int BSTInt::heightFinder(BSTNodeInt* n){
 
   int right = heightFinder(n->right);
   int left = heightFinder(n->left);
+  int negOne = -1;
+  int one = 1;
 
   bool notN = !n;
 
   if(notN) {
-    return -1;
+    return negOne;
   }
 
   if (left > right) {
-    return left + 1;
+    return left + one;
   }
   else {
-    return right + 1;
+    return right + one;
   }
 }
 
