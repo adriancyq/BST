@@ -121,11 +121,11 @@ int main() {
 
     //check if BST is empty
     if(!b3.empty()){
-            cout << "BST is not empty"; 
+            cout << "BST is not empty" << endl; 
         return -1;
     }
     else {
-        cout << "BST is empty";
+        cout << "BST is empty" << endl;
     }
 
     cout << "All tests passed!" << endl;
