@@ -11,14 +11,18 @@
 using namespace std;
 
 /**
- * A test driver for the BST int class and class template.
+ * A test driver for the BST int class and class template. Each test checks
+ * insert, size, find, and height.
+ *
  * PA1 CSE 100 2017
  * Author: Christine Alvarado, Jonathan Chiu, Adrian Cordova
  */
 int main() {
 
-    /* TEST 1: BST is balanced */
-    cout << "Test 1: Balanced BST." << endl;
+    /* ======================================================================
+    * TEST 1: BST is balanced.
+    */
+    cout << "Test 1: BST is balanced." << endl;
 
     // Vector containing ints to insert, in order
     vector<int> v;
@@ -44,9 +48,9 @@ int main() {
     }
 
     // Test size of balanced BST
-    cout << "Size is: " << b.size() << endl;
     if(b.size() != v.size()) {
-        cout << "... which is incorrect." << endl;
+        cout << "Size is: " << b.size()
+             << " ... which is incorrect." << endl;
         return -1;
     }
 
@@ -64,7 +68,10 @@ int main() {
     cout << "Height of BST 1: " << b.height() << endl;
 
 
-    /* TEST 2: BST is a linked list. */
+
+    /* ======================================================================
+    * TEST 2: BST is a linked list.
+    */
     cout << "Test 2: BST is a linked list." << endl;
 
     // Create a vector containing elements of increasing values
@@ -72,6 +79,8 @@ int main() {
     v2.push_back(1);
     v2.push_back(2);
     v2.push_back(3);
+    v2.push_back(4);
+    v2.push_back(5);
 
     // Create a BST holding int
     BSTInt b2;
@@ -85,6 +94,13 @@ int main() {
                << endl;
           return -1;
       }
+    }
+
+    // Test size of balanced BST
+    if(b2.size() != v2.size()) {
+        cout << "Size is: " << b2.size()
+             << " ... which is incorrect." << endl;
+        return -1;
     }
 
     // Test the items that are already in the tree

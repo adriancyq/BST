@@ -72,8 +72,8 @@ private:
 
   /** Height helper function. Finds the max height of the left and right
   * subtree. */
-  int heightHelper(BSTNodeInt* n);
-  
+  int heightHelper(BSTNodeInt* n) const;
+
   /** Number of Data items stored in this BST.
    *  Cache this number for efficiency. */
   unsigned int isize;

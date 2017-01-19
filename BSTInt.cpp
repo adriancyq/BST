@@ -137,7 +137,7 @@ int BSTInt::height() const
 /**
 * Height helper function that will recursively find the height.
 */
-int BSTInt::heightHelper(BSTNodeInt* n) {
+int BSTInt::heightHelper(BSTNodeInt* n) const {
 
   // No node here
   if (!n) {
