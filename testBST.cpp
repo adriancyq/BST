@@ -114,9 +114,19 @@ int main() {
     // Get the height of the BST
     cout << "Height of BST 2: " << b2.height() << endl;
 
+    //Testing empty method 
 
+    // Create an BST
+    BSTInt b3;
 
-
+    //check if BST is empty
+    if(!b3.empty()){
+            cout << "BST is not empty" 
+        return -1;
+    }
+    else {
+        cout << "BST is empty"
+    }
 
     cout << "All tests passed!" << endl;
     return 0;
