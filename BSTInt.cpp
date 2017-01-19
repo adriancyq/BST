@@ -123,31 +123,37 @@ unsigned int BSTInt::size() const
  */
 int BSTInt::height() const
 {
-  int zero = 0;
-  int treeheight = zero;
-  treeheight = heightFinder(root);
-  return treeheight;
+
+  // If tree is empty, height is 0
+  if (!root) {
+    return 0;
+  }
+
+  // Tree has at least one node
+  return heightHelper(root);
+
 }
 
-//heightFinder will find the height and parse it into height
-int BSTInt::heightFinder(BSTNodeInt* n){
+/**
+* Height helper function that will recursively find the height.
+*/
+int BSTInt::heightHelper(BSTNodeInt* n) {
 
-  int right = heightFinder(n->right);
-  int left = heightFinder(n->left);
-  int negOne = -1;
-  int one = 1;
-
-  bool notN = !n;
-
-  if(notN) {
-    return negOne;
+  // No node here
+  if (!n) {
+    return -1;
   }
 
+  // Recursively find the height of the left and right subtrees
+  int left = heightHelper(n->left);
+  int right = heightHelper(n->right);
+
+  // Return the max height from either subtree, plus 1 for the current node
   if (left > right) {
-    return left + one;
+    return left + 1;
   }
   else {
-    return right + one;
+    return right + 1;
   }
 }
 

@@ -70,6 +70,10 @@ private:
   /** Pointer to the root of this BST, or 0 if the BST is empty */
   BSTNodeInt* root;
 
+  /** Height helper function. Finds the max height of the left and right
+  * subtree. */
+  int heightHelper(BSTNodeInt* n);
+  
   /** Number of Data items stored in this BST.
    *  Cache this number for efficiency. */
   unsigned int isize;
@@ -81,8 +85,6 @@ private:
    *   and not on the BSTInt object directly.
    */
   static void deleteAll(BSTNodeInt* n);
-
-  static int heightFinder(BSTNodeInt* n);
 
 };
 
