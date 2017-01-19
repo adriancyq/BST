@@ -115,7 +115,7 @@ int main() {
     /* ======================================================================
     * TEST 2: BST is a linked list.
     */
-    cout << "Test 2: BST is a linked list." << endl;
+    cout << "Test 3: BST is a linked list." << endl;
 
     // Create a vector containing elements of decreasing values
     vector<int> v3;
@@ -155,7 +155,7 @@ int main() {
     }
 
     // Get the height of the BST
-    cout << "Height of BST 2: " << b3.height() << endl;
+    cout << "Height of BST 3: " << b3.height() << endl;
 
   /* ======================================================================
     * TEST 4: BST is unbalanced.
@@ -203,7 +203,7 @@ int main() {
     }
 
     // Get the height of the BST
-    cout << "Height of BST 1: " << b4.height() << endl;
+    cout << "Height of BST 4: " << b4.height() << endl;
 
 
     //Testing empty method 
