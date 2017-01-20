@@ -25,13 +25,13 @@ public:
   ~BST();
 
   /** Given a reference to a Data item, insert a copy of it in this BST.
-   *  Return a pair where the first element is an iterator 
-   *  pointing to either the newly inserted element or the element 
-   *  that was already in the BST, and the second element is true if the 
+   *  Return a pair where the first element is an iterator
+   *  pointing to either the newly inserted element or the element
+   *  that was already in the BST, and the second element is true if the
    *  element was newly inserted or false if it was already in the BST.
-   * 
+   *
    *  Note: This function should use only the '<' operator when comparing
-   *  Data items. (should not use ==, >, <=, >=)  
+   *  Data items. (should not use ==, >, <=, >=)
    */
   std::pair<iterator, bool> insert(const Data& item);
 
@@ -45,15 +45,15 @@ public:
    */
   iterator find(const Data& item) const;
 
-  
+
   /** Return the number of items currently in the BST.
-   */ 
+   */
   unsigned int size() const;
-  
+
   /** Return the height of the BST.
       height of a tree starts with root at height 0
 	  height of an empty tree is -1
-   */ 
+   */
   int height() const;
 
 
@@ -62,7 +62,7 @@ public:
   bool empty() const;
 
   /** Return an iterator pointing to the first (smallest) item in the BST.
-   */ 
+   */
   iterator begin() const;
 
   /** Return an iterator pointing past the last item in the BST.
@@ -74,13 +74,16 @@ private:
 
   /** Pointer to the root of this BST, or 0 if the BST is empty */
   BSTNode<Data>* root;
-  
+
   /** Number of Data items stored in this BST. */
   unsigned int isize;
 
+  /** Helper function for the height() method. */
+  int heightHelper(BSTNode<Data>* n) const;
+  
   /** Find the first element of the BST
    * Helper function for the begin method above.
-   */ 
+   */
   static BSTNode<Data>* first(BSTNode<Data>* root);
 
   /** do a postorder traversal, deleting nodes
@@ -103,11 +106,11 @@ BST<Data>::~BST() {
 
 /** Given a reference to a Data item, insert a copy of it in this BST.
  *  Return a pair where the first element is an iterator pointing to either the newly inserted
- *  element or the element that was already in the BST, and the second element is true if the 
+ *  element or the element that was already in the BST, and the second element is true if the
  *  element was newly inserted or false if it was already in the BST.
- * 
+ *
  *  Note: This function should use only the '<' operator when comparing
- *  Data items. (should not use ==, >, <=, >=)  
+ *  Data items. (should not use ==, >, <=, >=)
  */
 template <typename Data>
 std::pair<BSTIterator<Data>, bool> BST<Data>::insert(const Data& item) {
@@ -135,9 +138,9 @@ BSTIterator<Data> BST<Data>::find(const Data& item) const
 
 }
 
-  
+
 /** Return the number of items currently in the BST.
- */ 
+ */
 template <typename Data>
 unsigned int BST<Data>::size() const
 {
@@ -146,27 +149,56 @@ unsigned int BST<Data>::size() const
 
 /** Return the height of the BST.
  */
-template <typename Data> 
+template <typename Data>
 int BST<Data>::height() const
 {
-  // TODO
-  // HINT: Copy code from your BSTInt class
-  return 0;
+  // If tree is empty, height is 0
+  if (!root) {
+    return 0;
+  }
+
+  // Tree has at least one node
+  return heightHelper(root);
 }
 
+/** Return the height of the BST.
+    Helper function for height().
+ */
+template <typename Data>
+int BST<data>::heightHelper() const
+{
+  // No node here
+  if (!n) {
+    return -1;
+  }
+
+  // Recursively find the height of the left and right subtrees
+  int left = heightHelper(n->left);
+  int right = heightHelper(n->right);
+
+  // Return the max height from either subtree, plus 1 for the current node
+  if (left > right) {
+    return left + 1;
+  }
+  else {
+    return right + 1;
+  }
+}
 
 /** Return true if the BST is empty, else false.
- */ 
+ */
 template <typename Data>
 bool BST<Data>::empty() const
 {
-  // TODO
-  // HINT: Copy code form your BSTInt class
+  // If the BST has at least one element, the root cannot be null
+  if (root) {
+    return true;
+  }
   return false;
 }
 
 /** Return an iterator pointing to the first (smallest) item in the BST.
- */ 
+ */
 template <typename Data>
 BSTIterator<Data> BST<Data>::begin() const
 {
@@ -183,7 +215,7 @@ BSTIterator<Data> BST<Data>::end() const
 
 /** Find the first element of the BST
  * Helper function for the begin method above.
- */ 
+ */
 template <typename Data>
 BSTNode<Data>* BST<Data>::first(BSTNode<Data>* root)
 {
@@ -196,8 +228,19 @@ BSTNode<Data>* BST<Data>::first(BSTNode<Data>* root)
 template <typename Data>
 void BST<Data>::deleteAll(BSTNode<Data>* n)
 {
-  // TODO
-  // HINT: Copy code from your BSTInt class.
+  // Gone past the tree, or its empty
+  if (!n) {
+    return;
+  }
+
+  // Go left first
+  deleteAll(n->left);
+
+  // Then go right
+  deleteAll(n->right);
+
+  // Delete the current
+  delete n;
 }
 
 
