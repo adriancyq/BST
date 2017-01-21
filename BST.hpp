@@ -58,7 +58,7 @@ public:
 
 
   /** Return true if the BST is empty, else false.
-   */ // TODO
+   */
   bool empty() const;
 
   /** Return an iterator pointing to the first (smallest) item in the BST.

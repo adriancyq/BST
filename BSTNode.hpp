@@ -47,13 +47,36 @@ template <typename Data>
 BSTNode<Data>* BSTNode<Data>::successor()
 {
 
-  // Successor is the right child of the current node
-  if (right) {
-    return right;
-  }
+  // If current node has right subtree, successor is in there
+  if (this->right != NULL) {
 
-  // Right node is null
-  return 0;
+    // Go right once
+    BSTNode<Data>* successor = this->right;
+
+    // Then go all the way left
+    while (successor->left != NULL) {
+      successor = successor->left;
+    }
+
+    // Return min Node in right subtree
+    return successor;
+  }
+  // If current node has no right subtree, successor is somewhere above
+  else {
+
+    // Grab the parent and current node
+    BSTNode<Data>* parent = this->parent;
+    BSTNode<Data>* curr = this;
+
+    // Keep going up until we hit root or current node is left child of parent
+    while (parent != NULL && curr == parent->right) {
+      curr = parent;
+      parent = parent->parent;
+    }
+
+    // Reached first instance where current node is a left child of parent
+    return parent;
+  }
 }
 
 /** Overload operator<< to print a BSTNode's fields to an ostream. */

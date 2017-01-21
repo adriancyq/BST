@@ -72,11 +72,17 @@ int main() {
     auto ven = v.end();
 
     // This is equivalent to BSTIterator<int> en = btemp.end();
+    // This is null
     auto en = btemp.end();
 
     //This is equivalent to BST<int>::iterator it = btemp.begin();
     auto it = btemp.begin();
-    for(; vit != ven; ++vit) {
+
+    // "vit" will be -33, 0, 1, 3, 4
+    for(; vit != ven; ++vit)
+
+        // TODO segfault from dereferencing a null pointer "it"
+        // Iterate through the BST's nodes until we hit the end (null)
         if(! (it != en) ) {
             cout << *it << "," << *vit
                  << ": Early termination of BST iteration." << endl;
