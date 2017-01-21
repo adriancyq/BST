@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
     // Follow the comments below to add code:
 
     // TODO: Create a BST
-    BST<char[]> b;
+    BST<std::string> b;
 
     while (getline(in, name)) {
       // TODO: add the name string to the BST
@@ -73,7 +73,7 @@ int main(int argc, char* argv[])
         getline(cin, name);
 
         // TODO: Chainge the if statment to check is name is in the BST
-        if (true) {
+        if ((bool)b.find(name)) {
             cout << name << " found!" << endl;
         }
         else {
