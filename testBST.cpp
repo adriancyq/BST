@@ -79,7 +79,7 @@ int main() {
     auto it = btemp.begin();
 
     // "vit" will be -33, 0, 1, 3, 4
-    for(; vit != ven; ++vit)
+    for(; vit != ven; ++vit) {
 
         // TODO segfault from dereferencing a null pointer "it"
         // Iterate through the BST's nodes until we hit the end (null)
