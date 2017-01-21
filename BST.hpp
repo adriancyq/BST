@@ -258,9 +258,9 @@ bool BST<Data>::empty() const
 {
   // If the BST has at least one element, the root cannot be null
   if (root) {
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 /** Return an iterator pointing to the first (smallest) item in the BST.

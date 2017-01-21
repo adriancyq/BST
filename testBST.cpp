@@ -26,6 +26,7 @@ int main() {
   /* ======================================================================
   * TEST 1: BST is balanced.
   */
+  cout << "Test 1: BST is balanced." << endl;
 
   // Vector containing elements to add
   vector<int> v;
@@ -59,7 +60,6 @@ int main() {
 
   // Now test finding the elements we just put in
   for (int item: v) {
-      cout << "Finding " << item << "...." << endl;
       BSTIterator<int> foundIt = b1.find(item);
       if (*(foundIt) != item) {
           cout << "incorrect value returned.  Expected iterator pointing to "
@@ -67,7 +67,6 @@ int main() {
                << endl;
           return -1;
       }
-      cout << "success!" << endl;
   }
 
 
@@ -77,7 +76,6 @@ int main() {
   // Sort the vector, to compare with inorder iteration on the BST
   sort(v.begin(),v.end());
 
-  cout << "traversal using iterator..." << endl;
   auto vit = v.begin();
   auto ven = v.end();
 
@@ -98,7 +96,6 @@ int main() {
           return -1;
 
       }
-      cout << *it << endl;
       if(*it != *vit) {
           cout << *it << "," << *vit
                << ": Incorrect inorder iteration of BST." << endl;
@@ -110,6 +107,8 @@ int main() {
   /* ======================================================================
   * TEST 2: BST is a Linked List.
   */
+
+  cout << "Test 2: BST is a linked list." << endl;
 
   // Vector containing elements to add
   vector<int> v2;
@@ -158,6 +157,8 @@ int main() {
   * TEST 3: BST is a Linked List.
   */
 
+  cout << "Test 3: BST is a linked list." << endl;
+
   // Vector containing elements to add
   vector<int> v3;
   v3.push_back(5);
@@ -204,6 +205,8 @@ int main() {
   /* ======================================================================
   * TEST 4: BST is complete.
   */
+
+  cout << "Test 4: BST is complete." << endl;
 
   // Vector containing elements to add
   vector<int> v4;
@@ -254,12 +257,14 @@ int main() {
   * TEST 5: BST is empty.
   */
 
+  cout << "Test 5: BST is empty." << endl;
+
   // Test the template version of the BST with ints
   BST<int> b5;
 
   // Check if BST is empty
   if(!b5.empty()) {
-          cout << "BST is not empty" << endl;
+          cout << "BST is not empty." << endl;
       return -1;
   }
   else {
