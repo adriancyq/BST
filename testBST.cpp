@@ -104,6 +104,9 @@ int main() {
       ++it;
   }
 
+  // Get the height of the BST
+  cout << "Height of BST 1: " << b1.height() << endl;
+
   /* ======================================================================
   * TEST 2: BST is a Linked List.
   */
@@ -151,6 +154,9 @@ int main() {
       }
   }
 
+  // Get the height of the BST
+  cout << "Height of BST 2: " << b2.height() << endl;
+
   /* ======================================================================
   * TEST 3: BST is a Linked List.
   */
@@ -197,6 +203,9 @@ int main() {
           return -1;
       }
   }
+
+  // Get the height of the BST
+  cout << "Height of BST 3: " << b3.height() << endl;
 
   /* ======================================================================
   * TEST 4: BST is complete.
@@ -247,6 +256,9 @@ int main() {
       }
   }
 
+  // Get the height of the BST
+  cout << "Height of BST 4: " << b4.height() << endl;
+
   /* ======================================================================
   * TEST 5: BST is empty.
   */
@@ -276,11 +288,11 @@ int main() {
 
   // Vector containing ints to insert, in order
   vector<int> v6;
-  v.push_back(3);
-  v.push_back(4);
-  v.push_back(1);
-  v.push_back(100);
-  v.push_back(-33);
+  v6.push_back(3);
+  v6.push_back(4);
+  v6.push_back(1);
+  v6.push_back(100);
+  v6.push_back(-33);
 
   // Create an instance of BST holding int
   BSTInt b6;
@@ -471,7 +483,7 @@ int main() {
       return -1;
   }
   else {
-      cout << "BST is empty" << endl;
+      cout << "BST is empty." << endl;
   }
 
   cout << "All tests passed!" << endl;
