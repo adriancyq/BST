@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 
     // TODO: Get the size of the BST and store it in size
     size = b.size();
-    
+
     // DO NOT CHANGE THE LINES BELOW
     cout << "Size of tree: " << size << endl;
     cout << "Height of tree: " << height << endl;
@@ -73,12 +73,19 @@ int main(int argc, char* argv[])
         getline(cin, name);
 
         // TODO: Chainge the if statment to check is name is in the BST
-        if ((bool)b.find(name)) {
+        BSTIterator<std::string> found = b.find(name);
+
+        // Use overloaded inequality to compare Node iterators
+        // NodeIterator doesn't contain null node
+        if (found != b.end()) {
             cout << name << " found!" << endl;
         }
+
+        // Contains null node
         else {
             cout << name << " NOT found" << "\n";
         }
+        
         cout << "Search again? (y/n)" << endl;
         cin >> prompt;  // Get the first character
         // Then ignore until newline
