@@ -32,6 +32,45 @@ two child nodes before excluding it as a location in the tree to insert. After
 changing the condition to check 'curr != null', and introducing a parent node
 pointer, the BST passed all tests!
 
-5. BSTInt.h passes int item by value, and not by reference because the called functions' parameter will be the same as the callers' passed argument. In BSTInt.cpp, the insert method passes in int item. BST.hpp passes const Data& item, and not by value the called functions' parameter will be a copy of the callers' passed argument
+5. The insert method in BST.hpp passes its argument by reference, whereas the
+insert method in BSTInt.h passes its argument by value. This is probably
+because the argument insert in BSTInt.h is guaranteed to be 4 bytes, since it
+is an int. However, because the argument for insert in BST.hpp has a generic
+datatype, we do not know what the size of that argument is, so we wish to
+avoid passing it by value in case that value is big.
 
-6. Sorted input files produce taller trees
+6. actors_sorted.txt produces taller trees.
+
+7. For sorted input, we expect BSTs to have height of N, where N is the size of
+the tree. Since the input is sorted, each successive element will be bigger,
+thus creating a linked list structure where the next node is bigger than the
+previous.
+
+We provide the results of a few simulations below, ran with data from
+"actors_sorted.txt".
+
+size      |    height
+======================
+10        |    9
+50        |    49
+100       |    99
+11794     |    11793
+
+This supports our expectations, because as the size of the BST grows, so does
+height.
+
+For a random input, I expect a height of log(N).
+http://cs.stackexchange.com/questions/6342/proof-that-a-randomly-built-binary-search-tree-has-logarithmic-height
+
+We also provide results of a few simulations below, ran with data from "actors.txt"
+
+size      |    height
+======================
+10        |    4
+50        |    12
+100       |    14
+11794     |    32
+
+This also supports our expectations of a logarithmic height. If these points
+were graphed on an X-Y axis, where the x-axis represents the size, and the
+y-axis represents the height, the shape is logarithmic.
