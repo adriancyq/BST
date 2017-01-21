@@ -288,7 +288,7 @@ cout << "Height of BST 4: " << b9.height() << endl;
 
 
 //Testing empty method
-cout << "Test 5: Checking if the BST is empty." << endl;
+cout << "Test 10: Checking if the BST is empty." << endl;
 
 // Create an BST
 BSTInt b10;
