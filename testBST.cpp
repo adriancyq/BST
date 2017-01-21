@@ -129,7 +129,7 @@ for(int item : v6) {
 }
 
 // Test size of balanced BST
-if(b.size() != v6.size()) {
+if(b6.size() != v6.size()) {
     cout << "Size is: " << b6.size()
          << " ... which is incorrect." << endl;
     return -1;
@@ -155,11 +155,11 @@ cout << "Test 7: BST is a linked list." << endl;
 
 // Create a vector containing elements of increasing values
 vector<int> v7;
-v2.push_back(1);
-v2.push_back(2);
-v2.push_back(3);
-v2.push_back(4);
-v2.push_back(5);
+v7.push_back(1);
+v7.push_back(2);
+v7.push_back(3);
+v7.push_back(4);
+v7.push_back(5);
 
 // Create a BST holding int
 BSTInt b7;
@@ -176,7 +176,7 @@ for (int item: v7) {
 }
 
 // Test size of balanced BST
-if(b2.size() != v7.size()) {
+if(b7.size() != v7.size()) {
     cout << "Size is: " << b7.size()
          << " ... which is incorrect." << endl;
     return -1;
@@ -200,11 +200,11 @@ cout << "Test 8: BST is a linked list." << endl;
 
 // Create a vector containing elements of decreasing values
 vector<int> v8;
-v3.push_back(5);
-v3.push_back(4);
-v3.push_back(3);
-v3.push_back(2);
-v3.push_back(1);
+v8.push_back(5);
+v8.push_back(4);
+v8.push_back(3);
+v8.push_back(2);
+v8.push_back(1);
 
 // Create a BST holding int
 BSTInt b8;
@@ -221,7 +221,7 @@ for (int item: v8) {
 }
 
 // Test size of balanced BST
-if(b2.size() != v8.size()) {
+if(b8.size() != v8.size()) {
     cout << "Size is: " << b8.size()
          << " ... which is incorrect." << endl;
     return -1;
@@ -245,11 +245,11 @@ cout << "Test 9: BST is unbalanced." << endl;
 
 // Vector containing ints to insert, in order
 vector<int> v9;
-v4.push_back(14);
-v4.push_back(9);
-v4.push_back(37);
-v4.push_back(142);
-v4.push_back(-25);
+v9.push_back(14);
+v9.push_back(9);
+v9.push_back(37);
+v9.push_back(142);
+v9.push_back(-25);
 
 // Create an instance of BST holding int
 BSTInt b9;
@@ -267,7 +267,7 @@ for(int item : v9) {
 }
 
 // Test size of balanced BST
-if(b4.size() != v9.size()) {
+if(b9.size() != v9.size()) {
     cout << "Size is: " << b9.size()
          << " ... which is incorrect." << endl;
     return -1;
