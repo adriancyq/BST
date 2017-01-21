@@ -65,17 +65,17 @@ BSTNode<Data>* BSTNode<Data>::successor()
   else {
 
     // Grab the parent and current node
-    BSTNode<Data>* parent = this->parent;
+    BSTNode<Data>* par = this->parent;
     BSTNode<Data>* curr = this;
 
     // Keep going up until we hit root or current node is left child of parent
-    while (parent != NULL && curr == parent->right) {
-      curr = parent;
-      parent = parent->parent;
+    while (par != NULL && curr == par->right) {
+      curr = par;
+      par = par->parent;
     }
 
     // Reached first instance where current node is a left child of parent
-    return parent;
+    return par;
   }
 }
 
