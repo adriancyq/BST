@@ -142,7 +142,6 @@ int main() {
 
   // Now test finding the elements we just put in
   for (int item: v2) {
-      cout << "Finding " << item << "...." << endl;
       BSTIterator<int> foundIt = b2.find(item);
       if (*(foundIt) != item) {
           cout << "incorrect value returned.  Expected iterator pointing to "
@@ -150,7 +149,6 @@ int main() {
                << endl;
           return -1;
       }
-      cout << "success!" << endl;
   }
 
   /* ======================================================================
@@ -191,7 +189,6 @@ int main() {
 
   // Now test finding the elements we just put in
   for (int item: v3) {
-      cout << "Finding " << item << "...." << endl;
       BSTIterator<int> foundIt = b3.find(item);
       if (*(foundIt) != item) {
           cout << "incorrect value returned.  Expected iterator pointing to "
@@ -199,7 +196,6 @@ int main() {
                << endl;
           return -1;
       }
-      cout << "success!" << endl;
   }
 
   /* ======================================================================
@@ -242,7 +238,6 @@ int main() {
 
   // Now test finding the elements we just put in
   for (int item: v4) {
-      cout << "Finding " << item << "...." << endl;
       BSTIterator<int> foundIt = b4.find(item);
       if (*(foundIt) != item) {
           cout << "incorrect value returned.  Expected iterator pointing to "
@@ -250,7 +245,6 @@ int main() {
                << endl;
           return -1;
       }
-      cout << "success!" << endl;
   }
 
   /* ======================================================================
@@ -466,7 +460,7 @@ int main() {
   /* ======================================================================
   * TEST 10: BST is unbalanced.
   */
-  cout << "Test 10: Empty BST" << endl;
+  cout << "Test 10: BST is empty." << endl;
 
   // Create an BST
   BSTInt b10;
