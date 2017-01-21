@@ -103,10 +103,10 @@ int main() {
     /* ======================================================================
 * TEST 1: BST is balanced.
 */
-cout << "Test 1: BST is balanced." << endl;
+cout << "Test 6: BST is balanced." << endl;
 
 // Vector containing ints to insert, in order
-vector<int> v;
+vector<int> v6;
 v.push_back(3);
 v.push_back(4);
 v.push_back(1);
@@ -114,11 +114,11 @@ v.push_back(100);
 v.push_back(-33);
 
 // Create an instance of BST holding int
-BSTInt b;
+BSTInt b6;
 
 // Add each item into the tree
-for(int item : v) {
-    bool result = b.insert(item);
+for(int item : v6) {
+    bool result = b6.insert(item);
 
     // Unsuccessful insertion, return -1 for failure
     if (!result) {
@@ -129,32 +129,32 @@ for(int item : v) {
 }
 
 // Test size of balanced BST
-if(b.size() != v.size()) {
-    cout << "Size is: " << b.size()
+if(b.size() != v6.size()) {
+    cout << "Size is: " << b6.size()
          << " ... which is incorrect." << endl;
     return -1;
 }
 
 // Test to see if we can find the items that we inserted
-for(int item : v) {
+for(int item : v6) {
 
     // Unable to find item
-    if (!b.find(item)) {
+    if (!b6.find(item)) {
         cout << "Incorrect return value when finding " << item << endl;
         return -1;
     }
 }
 
 // Get the height of the BST
-cout << "Height of BST 1: " << b.height() << endl;
+cout << "Height of BST 1: " << b6.height() << endl;
 
 /* ======================================================================
 * TEST 2: BST is a linked list.
 */
-cout << "Test 2: BST is a linked list." << endl;
+cout << "Test 7: BST is a linked list." << endl;
 
 // Create a vector containing elements of increasing values
-vector<int> v2;
+vector<int> v7;
 v2.push_back(1);
 v2.push_back(2);
 v2.push_back(3);
@@ -162,11 +162,11 @@ v2.push_back(4);
 v2.push_back(5);
 
 // Create a BST holding int
-BSTInt b2;
+BSTInt b7;
 
 // Add each item in vector into BST
-for (int item: v2) {
-  bool result = b2.insert(item);
+for (int item: v7) {
+  bool result = b7.insert(item);
 
   if (!result) {
       cout << "Incorrect bool return value when inserting " << item
@@ -176,30 +176,30 @@ for (int item: v2) {
 }
 
 // Test size of balanced BST
-if(b2.size() != v2.size()) {
-    cout << "Size is: " << b2.size()
+if(b2.size() != v7.size()) {
+    cout << "Size is: " << b7.size()
          << " ... which is incorrect." << endl;
     return -1;
 }
 
 // Test the items that are already in the tree
-for(int item : v2) {
-    if (!b2.find(item)) {
+for(int item : v7) {
+    if (!b7.find(item)) {
         cout << "Incorrect return value when finding " << item << endl;
         return -1;
     }
 }
 
 // Get the height of the BST
-cout << "Height of BST 2: " << b2.height() << endl;
+cout << "Height of BST 2: " << b7.height() << endl;
 
 /* ======================================================================
 * TEST 2: BST is a linked list.
 */
-cout << "Test 3: BST is a linked list." << endl;
+cout << "Test 8: BST is a linked list." << endl;
 
 // Create a vector containing elements of decreasing values
-vector<int> v3;
+vector<int> v8;
 v3.push_back(5);
 v3.push_back(4);
 v3.push_back(3);
@@ -207,11 +207,11 @@ v3.push_back(2);
 v3.push_back(1);
 
 // Create a BST holding int
-BSTInt b3;
+BSTInt b8;
 
 // Add each item in vector into BST
-for (int item: v3) {
-  bool result = b3.insert(item);
+for (int item: v8) {
+  bool result = b8.insert(item);
 
   if (!result) {
       cout << "Incorrect bool return value when inserting " << item
@@ -221,30 +221,30 @@ for (int item: v3) {
 }
 
 // Test size of balanced BST
-if(b2.size() != v3.size()) {
-    cout << "Size is: " << b3.size()
+if(b2.size() != v8.size()) {
+    cout << "Size is: " << b8.size()
          << " ... which is incorrect." << endl;
     return -1;
 }
 
 // Test the items that are already in the tree
-for(int item : v3) {
-    if (!b3.find(item)) {
+for(int item : v8) {
+    if (!b8.find(item)) {
         cout << "Incorrect return value when finding " << item << endl;
         return -1;
     }
 }
 
 // Get the height of the BST
-cout << "Height of BST 3: " << b3.height() << endl;
+cout << "Height of BST 3: " << b8.height() << endl;
 
 /* ======================================================================
 * TEST 4: BST is unbalanced.
 */
-cout << "Test 4: BST is unbalanced." << endl;
+cout << "Test 9: BST is unbalanced." << endl;
 
 // Vector containing ints to insert, in order
-vector<int> v4;
+vector<int> v9;
 v4.push_back(14);
 v4.push_back(9);
 v4.push_back(37);
@@ -252,11 +252,11 @@ v4.push_back(142);
 v4.push_back(-25);
 
 // Create an instance of BST holding int
-BSTInt b4;
+BSTInt b9;
 
 // Add each item into the tree
-for(int item : v4) {
-    bool result = b4.insert(item);
+for(int item : v9) {
+    bool result = b9.insert(item);
 
     // Unsuccessful insertion, return -1 for failure
     if (!result) {
@@ -267,34 +267,34 @@ for(int item : v4) {
 }
 
 // Test size of balanced BST
-if(b4.size() != v4.size()) {
-    cout << "Size is: " << b4.size()
+if(b4.size() != v9.size()) {
+    cout << "Size is: " << b9.size()
          << " ... which is incorrect." << endl;
     return -1;
 }
 
 // Test to see if we can find the items that we inserted
-for(int item : v4) {
+for(int item : v9) {
 
     // Unable to find item
-    if (!b4.find(item)) {
+    if (!b9.find(item)) {
         cout << "Incorrect return value when finding " << item << endl;
         return -1;
     }
 }
 
 // Get the height of the BST
-cout << "Height of BST 4: " << b4.height() << endl;
+cout << "Height of BST 4: " << b9.height() << endl;
 
 
 //Testing empty method
 cout << "Test 5: Checking if the BST is empty." << endl;
 
 // Create an BST
-BSTInt b5;
+BSTInt b10;
 
 //check if BST is empty
-if(!b5.empty()){
+if(!b10.empty()){
         cout << "BST is not empty" << endl;
     return -1;
 }
