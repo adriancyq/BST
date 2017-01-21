@@ -17,12 +17,12 @@ public:
 
   /** Constructor.  Use the argument to initialize the current BSTNode
    *  in this BSTIterator.
-   */ 
+   */
   BSTIterator(BSTNode<Data>* curr);
 
   /** Dereference operator. */
   Data operator*() const;
-  
+
   /** Pre-increment operator. */
   BSTIterator<Data>& operator++();
 
@@ -32,20 +32,17 @@ public:
   /** Equality test operator. */
   bool operator==(BSTIterator<Data> const & other) const;
 
-  /** Inequality test operator. */ 
+  /** Inequality test operator. */
   bool operator!=(BSTIterator<Data> const & other) const;
 
 };
 
   /** Constructor.  Use the argument to initialize the current BSTNode
    *  in this BSTIterator.
-   */ 
+   */
 template<typename Data>
 BSTIterator<Data>::BSTIterator(BSTNode<Data>* curr) {
-  // TODO
-  // Remember the keyword "this" which stores a pointer to the calling object.
-  // It will be helpful to distinguish between the parameter "curr" and the 
-  // member variable "curr"
+  this->curr = curr;
 }
 
 /** Dereference operator. */
@@ -53,7 +50,7 @@ template<typename Data>
 Data BSTIterator<Data>::operator*() const {
   return curr->data;
 }
-  
+
 /** Pre-increment operator. */
 template<typename Data>
 BSTIterator<Data>& BSTIterator<Data>::operator++() {
@@ -73,25 +70,23 @@ BSTIterator<Data> BSTIterator<Data>::operator++(int) {
 /** Equality test operator. */ // TODO
 template<typename Data>
 bool BSTIterator<Data>::operator==(BSTIterator<Data> const & other) const {
-  // TODO
-  // Notice that other is a reference and not a pointer, thus it cannot be null
-  // Return true if other is NOT equal to the calling object
-  // Two iterators are equal if they point to the same BSTNode in the same BST  
 
+  // Compare the BSTNodes to see if they are equal
+  if (*curr == other) {
+    return true;
+  }
   return false;
-
 }
 
-/** Inequality test operator. */ 
+/** Inequality test operator. */
 template<typename Data>
 bool BSTIterator<Data>::operator!=(BSTIterator<Data> const & other) const {
-  // TODO
-  // Notice that other is a reference and not a pointer, thus it cannot be null
-  // Return true if other is NOT equal to the calling object
-  // Two iterators are equal if they point to the same BSTNode in the same BST
 
+  // Compare the BSTNodes to see if they are NOT equal
+  if (*curr != other) {
+    return true;
+  }
   return false;
-
 }
 
 

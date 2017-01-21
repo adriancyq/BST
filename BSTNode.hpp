@@ -4,7 +4,7 @@
 #include <iomanip>
 
 /** Starter code for PA1, CSE 100 2016
- * Authors: Christine Alvarado, based on code by Paul Kube 
+ * Authors: Christine Alvarado, based on code by Paul Kube
  * ADD YOUR NAME AS AN AUTHOR HERE
  */
 
@@ -29,10 +29,10 @@ public:
    ** POSTCONDITION:  the BST is unchanged.
    ** RETURNS: the BSTNode that is the successor of this BSTNode,
    ** or 0 if there is none.
-   */ // TODO
-  BSTNode<Data>* successor(); 
+   */
+  BSTNode<Data>* successor();
 
-}; 
+};
 
 
 // Function definitions
@@ -41,13 +41,19 @@ public:
 template <typename Data>
 BSTNode<Data>::BSTNode(const Data & d) : data(d), left(0), right(0), parent(0) {}
 
-/* Return a pointer to the BSTNode that contains the item that is sequentially next 
+/* Return a pointer to the BSTNode that contains the item that is sequentially next
  * in the tree */
 template <typename Data>
 BSTNode<Data>* BSTNode<Data>::successor()
 {
-  //TODO 
-  return NULL;
+
+  // Successor is the right child of the current node
+  if (right) {
+    return right;
+  }
+
+  // Right node is null
+  return 0;
 }
 
 /** Overload operator<< to print a BSTNode's fields to an ostream. */

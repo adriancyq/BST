@@ -80,7 +80,7 @@ private:
 
   /** Helper function for the height() method. */
   int heightHelper(BSTNode<Data>* n) const;
-  
+
   /** Find the first element of the BST
    * Helper function for the begin method above.
    */
@@ -114,11 +114,57 @@ BST<Data>::~BST() {
  */
 template <typename Data>
 std::pair<BSTIterator<Data>, bool> BST<Data>::insert(const Data& item) {
-  // TODO
-  // HINT: Copy code from your BSTInt class and change the return value
-  // REPLACE THE LINE BELOW
-  return std::pair<BSTIterator<Data>, bool>(BSTIterator<Data>(0), false);
 
+  // First element to insert
+  if (!root) {
+    root = new BSTNode<Data>(item);
+    ++isize;
+    return std::pair<BSTIterator<Data>, bool>(BSTIterator<Data>(root), true);
+  }
+
+  // Start at root to find where to insert new node
+  BSTNode<Data>* curr = root;
+  BSTNode<Data>* parent = NULL;      // Keep track of current node's parent
+
+  // Find the first appropriate null position
+  while (curr != NULL) {
+
+    // Go left if current node is greater than element to insert
+    if (item < curr->data) {
+      parent = curr;
+      curr = curr->left;
+    }
+
+    // Go right if current node is less than element to insert
+    else if (curr->data < item) {
+      parent = curr;
+      curr = curr->right;
+    }
+
+    // Found an element with same value, do not insert
+    else {
+      return std::pair<BSTIterator<Data>, bool>(BSTIterator<Data>(curr), false);
+    }
+  }
+
+  // Create node to insert
+  BSTNode<Data>* newNode = new BSTNode<Data>(item);
+
+  // Insert left
+  if (item < parent->data) {
+    parent->left = newNode;
+    newNode->parent = parent;
+  }
+
+  // Insert right
+  else {
+    parent->right = newNode;
+    newNode->parent = parent;
+  }
+
+  // Update size and return true on successful insertion
+  ++isize;
+  return std::pair<BSTIterator<Data>, bool>(BSTIterator<Data>(newNode), true;
 }
 
 
@@ -132,10 +178,30 @@ std::pair<BSTIterator<Data>, bool> BST<Data>::insert(const Data& item) {
 template <typename Data>
 BSTIterator<Data> BST<Data>::find(const Data& item) const
 {
-  // TODO
-  // HINT: Copy code from your BSTInt class and change the return value
-  return BSTIterator<Data>(nullptr);
+  // Start looking at root node
+  BSTNode<Data>* curr = root;
 
+  // Go until we go past a leaf node
+  while (curr) {
+
+    // Go right if node is less than desired
+    if (curr->data < item) {
+      curr = curr->right;
+    }
+
+    // Go left if node is greater than desired
+    else if (item < curr->data) {
+      curr = curr->left;
+    }
+
+    // Found desired node
+    else {
+      return BSTIterator<Data>(curr);
+    }
+  }
+
+  // Could not find BSTNode
+  return BSTIterator<Data>(nullptr)
 }
 
 
@@ -219,8 +285,15 @@ BSTIterator<Data> BST<Data>::end() const
 template <typename Data>
 BSTNode<Data>* BST<Data>::first(BSTNode<Data>* root)
 {
-  // TODO
-  return nullptr;
+  // Keep track of current node
+  BSTNode<Data>* currNode = root;
+
+  // Go all the way left
+  while (currNode->left != NULL) {
+    currNode = currNode->left;
+  }
+
+  return currNode;
 }
 
 /** do a postorder traversal, deleting nodes
