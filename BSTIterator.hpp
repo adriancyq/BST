@@ -71,11 +71,6 @@ BSTIterator<Data> BSTIterator<Data>::operator++(int) {
 template<typename Data>
 bool BSTIterator<Data>::operator==(BSTIterator<Data> const & other) const {
 
-  // Comparing an empty node
-  if (other == NULL) {
-    return false;
-  }
-
   // Compare the BSTNodes to see if they are equal
   if (this->curr == other.curr) {
     return true;
@@ -86,11 +81,6 @@ bool BSTIterator<Data>::operator==(BSTIterator<Data> const & other) const {
 /** Inequality test operator. */
 template<typename Data>
 bool BSTIterator<Data>::operator!=(BSTIterator<Data> const & other) const {
-
-  // Comparing an empty node
-  if (other == NULL) {
-    return false;
-  }
 
   // Compare the BSTNodes to see if they are NOT equal
   if (this->curr != other.curr) {
