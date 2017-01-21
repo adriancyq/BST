@@ -72,7 +72,7 @@ template<typename Data>
 bool BSTIterator<Data>::operator==(BSTIterator<Data> const & other) const {
 
   // Compare the BSTNodes to see if they are equal
-  if (this.curr == other.curr) {
+  if (this->curr == other.curr) {
     return true;
   }
   return false;
@@ -83,7 +83,7 @@ template<typename Data>
 bool BSTIterator<Data>::operator!=(BSTIterator<Data> const & other) const {
 
   // Compare the BSTNodes to see if they are NOT equal
-  if (this.curr != other.curr) {
+  if (this->curr != other.curr) {
     return true;
   }
   return false;

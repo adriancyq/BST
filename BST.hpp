@@ -164,7 +164,7 @@ std::pair<BSTIterator<Data>, bool> BST<Data>::insert(const Data& item) {
 
   // Update size and return true on successful insertion
   ++isize;
-  return std::pair<BSTIterator<Data>, bool>(BSTIterator<Data>(newNode), true;
+  return std::pair<BSTIterator<Data>, bool>(BSTIterator<Data>(newNode), true);
 }
 
 
@@ -201,7 +201,7 @@ BSTIterator<Data> BST<Data>::find(const Data& item) const
   }
 
   // Could not find BSTNode
-  return BSTIterator<Data>(nullptr)
+  return BSTIterator<Data>(nullptr);
 }
 
 
