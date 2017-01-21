@@ -274,7 +274,7 @@ int main() {
       return -1;
   }
   else {
-      cout << "BST is empty" << endl;
+      cout << "BST is empty." << endl;
   }
 
   /* ========================================================================
