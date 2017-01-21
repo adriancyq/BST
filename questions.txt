@@ -31,3 +31,7 @@ condition stood out the most because we do not require the current node to have
 two child nodes before excluding it as a location in the tree to insert. After
 changing the condition to check 'curr != null', and introducing a parent node
 pointer, the BST passed all tests!
+
+5. BSTInt.h passes int item by value, and not by reference because the called functions' parameter will be the same as the callers' passed argument. In BSTInt.cpp, the insert method passes in int item. BST.hpp passes const Data& item, and not by value the called functions' parameter will be a copy of the callers' passed argument
+
+6. Sorted input files produce taller trees
