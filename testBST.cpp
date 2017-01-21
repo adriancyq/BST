@@ -20,7 +20,12 @@ using namespace std;
 int main() {
 
     /* UNCOMMENT THE LINES BELOW TO TEST THE TEMPLATE-BASED ITERATOR */
-
+    vector<int> v;
+    v.push_back(3);
+    v.push_back(4);
+    v.push_back(1);
+    v.push_back(100);
+    v.push_back(-33);
 
     // Test the template version of the BST  with ints
     BST<int> btemp;
@@ -87,6 +92,6 @@ int main() {
         ++it;
     }
 
-    cout << "success!" << endl; 
+    cout << "success!" << endl;
     return 0;
 }

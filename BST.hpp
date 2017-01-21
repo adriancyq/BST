@@ -231,7 +231,7 @@ int BST<Data>::height() const
     Helper function for height().
  */
 template <typename Data>
-int BST<data>::heightHelper() const
+int BST<data>::heightHelper(BSTNode<Data>* n) const
 {
   // No node here
   if (!n) {
