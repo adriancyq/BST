@@ -267,7 +267,7 @@ for(int item : v9) {
 }
 
 // Test size of balanced BST
-if(b9.size() != v9.size()) {
+if(b9git.size() != v9.size()) {
     cout << "Size is: " << b9.size()
          << " ... which is incorrect." << endl;
     return -1;
